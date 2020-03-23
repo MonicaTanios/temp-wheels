@@ -19,7 +19,7 @@ class RectangularButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
-      minWidth: width,
+      minWidth: width ?? 0,
       child: RaisedButton(
         color: buttonColor,
         shape: BeveledRectangleBorder(borderRadius: BorderRadius.zero),
