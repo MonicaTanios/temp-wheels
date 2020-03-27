@@ -42,4 +42,18 @@ class UserRepository {
     var doc = await _db.collection('users').document(authUser.uid).get();
     return User.fromDocument(doc)..email = authUser.email;
   }
+
+  Future<void> updateEmail(
+      String oldEmail, String password, String newEmail) async {
+    await _auth.signInWithEmailAndPassword(email: oldEmail, password: password);
+    await _auth.currentUser()
+      ..updateEmail(newEmail);
+  }
+
+  Future<void> updatePassword(
+      String email, String oldPassword, String newPassword) async {
+    await _auth.signInWithEmailAndPassword(email: email, password: oldPassword);
+    await _auth.currentUser()
+      ..updatePassword(newPassword);
+  }
 }

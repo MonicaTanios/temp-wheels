@@ -6,6 +6,7 @@ import '../models/user.dart';
 import '../models/vehicle.dart';
 import '../screens/vehicle_screen.dart';
 import '../widgets/rectangular_button.dart';
+import 'account_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final User user;
@@ -49,6 +50,16 @@ class HomeScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => VehicleScreen(tmp)),
+              );
+            },
+          ),
+          RectangularButton(
+            text: 'Mimic Account Pressed',
+            textColor: Colors.white,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AccoutScreen()),
               );
             },
           )
