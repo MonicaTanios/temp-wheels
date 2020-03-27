@@ -11,6 +11,10 @@ class Validators {
     r'^\d{11}$',
   );
 
+  static final RegExp _visaNumberRegExp = RegExp(
+    r'^4[0-9]{6,}$',
+  );
+
   static isValidEmail(String email) {
     return _emailRegExp.hasMatch(email);
   }
@@ -21,5 +25,9 @@ class Validators {
 
   static isValidPhoneNumber(String phoneNumber) {
     return _phoneNumberRegExp.hasMatch(phoneNumber);
+  }
+
+  static isValidVisaNumber(String visaNumber) {
+    return _visaNumberRegExp.hasMatch(visaNumber);
   }
 }
